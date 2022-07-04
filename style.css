@@ -1,0 +1,53 @@
+body {
+  background-color: rgb(230, 253, 255);
+}
+
+.container {
+  text-align: center;
+}
+
+.btn-content {
+  display: flex;
+  justify-content: center;
+}
+.btn-div{
+  margin: 2rem;
+}
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.steps {
+  color: white;
+  background-color: rgb(33, 52, 94);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  margin: 1rem;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 1px black;
+}
+
+.function-btn {
+  color: rgb(255, 255, 255);
+  background-color: rgb(108, 168, 104);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  margin: 1rem;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 1px black;
+}
