@@ -1,12 +1,14 @@
-const initialValue = { selectedValue: 1, maxValue: 1, total: 0 };
+const initialValue = { selectedValue: 1, maxValue: 15, total: 0 };
 
 const reducer = (state = initialValue, { type, value = 1 }) => {
   switch (type) {
     case "maxValue":
-      return { ...state + value <= state.maxValue };
+      return { ...state, maxValue: value };
     case "selectedValue":
       return { ...state, selectedValue: value };
     case "inc":
+      // Check for max value
+      if (state.total + state.selectedValue > state.maxValue) return { ...state };
       return { ...state, total: state.total + state.selectedValue };
     case "dec":
       return { ...state, total: state.total - state.selectedValue };
@@ -24,10 +26,9 @@ html.innerHTML = store.getState().total;
 
 store.subscribe(() => { html.innerHTML = store.getState().total })
 
-function maxValue(value) {
+function handleMaxValue(value) {
   return store.dispatch({ type: "maxValue", value })
 }
-console.log(maxValue)
 
 function selectValue(value) {
   return store.dispatch({ type: "selectedValue", value });
@@ -43,6 +44,4 @@ function inc() {
 function reset() {
   return store.dispatch({ type: "reset" });
 }
-
-
 
